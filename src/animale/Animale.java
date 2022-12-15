@@ -1,6 +1,7 @@
 package animale;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public abstract class Animale {
 
@@ -53,7 +54,5 @@ public abstract class Animale {
     public void setAltezza(double altezza) {
         this.altezza = altezza;
     }
-
-    //METODI
 
 }
