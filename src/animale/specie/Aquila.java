@@ -3,7 +3,10 @@ package animale.specie;
 import animale.Animale;
 import animale.caratteristiche.Alato;
 
-public class Aquila extends Animale implements Alato {
+import java.util.Iterator;
+import java.util.List;
+
+public class Aquila extends Animale {
 
     private double aperturaAlare = 0;
 

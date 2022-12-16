@@ -3,7 +3,7 @@ package animale.specie;
 import animale.Animale;
 import animale.caratteristiche.Caudato;
 
-public class Leone extends Animale implements Caudato {
+public class Leone extends Animale {
 
     private double lunghezzaCoda = 0;
 

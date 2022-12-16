@@ -59,7 +59,7 @@ public abstract class Animale {
     //METODI
     public Animale trovaPiuAlto (List<Animale> listaAnimali){
 
-        Animale animalePiuAlto = listaAnimali.get(1);
+        Animale animalePiuAlto = listaAnimali.get(0);
         Iterator<Animale> iter = listaAnimali.iterator();
         while(iter.hasNext())
         {
@@ -87,6 +87,38 @@ public abstract class Animale {
             }
         }
         return animalePiuBasso;
+    }
+
+    public Animale trovaPiuPesante (List<Animale> listaAnimali){
+
+        Animale animalePiuPesante = listaAnimali.get(0);
+        Iterator<Animale> iter = listaAnimali.iterator();
+        while(iter.hasNext())
+        {
+            Animale curAnimale = iter.next();
+            curAnimale.getPeso();
+
+            if (curAnimale.getPeso()>animalePiuPesante.getPeso()){
+                animalePiuPesante = curAnimale;
+            }
+        }
+        return animalePiuPesante;
+    }
+
+    public Animale trovaPiuLeggero (List<Animale> listaAnimali){
+
+        Animale animalePiuLeggero = listaAnimali.get(0);
+        Iterator<Animale> iter = listaAnimali.iterator();
+        while(iter.hasNext())
+        {
+            Animale curAnimale = iter.next();
+            curAnimale.getPeso();
+
+            if (curAnimale.getPeso()<animalePiuLeggero.getPeso()){
+                animalePiuLeggero = curAnimale;
+            }
+        }
+        return animalePiuLeggero;
     }
 
 }
