@@ -3,7 +3,6 @@ import animale.specie.Leone;
 
 import java.util.ArrayList;
 import java.util.List;
-import utils.Ricercatore;
 
 public class Main {
 
@@ -23,14 +22,20 @@ public class Main {
         leone3.setAltezza(1.3);
 
 
-        System.out.println("Animale più alto:");
-        List<Leone> listaLeoni = new ArrayList<Leone>();
+        List<Animale> listaLeoni = new ArrayList<Animale>();
         listaLeoni.add(leone1);
         listaLeoni.add(leone2);
         listaLeoni.add(leone3);
 
-        new Ricercatore().trovaPiuAlto(listaLeoni);
+        Leone leonePiuAlto = new Leone();
+        leonePiuAlto = (Leone)leonePiuAlto.trovaPiuAlto(listaLeoni);
 
-        System.out.println(leone1.getNome() + leone1.getLunghezzaCoda());
+        System.out.println("Animale più alto:" + leonePiuAlto.getNome() + "\nAltezza:" + leonePiuAlto.getAltezza());
+
+
+        Leone leonePiuBasso = new Leone();
+        leonePiuBasso = (Leone)leonePiuBasso.trovaPiuBasso(listaLeoni);
+
+        System.out.println("Animale più basso:" + leonePiuBasso.getNome() + "\nAltezza:" + leonePiuBasso.getAltezza());
     }
 }

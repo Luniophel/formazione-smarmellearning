@@ -1,6 +1,8 @@
 package animale;
 
 import java.time.LocalDate;
+import java.util.Iterator;
+import java.util.List;
 
 public abstract class Animale {
 
@@ -52,6 +54,39 @@ public abstract class Animale {
     }
     public void setAltezza(double altezza) {
         this.altezza = altezza;
+    }
+
+    //METODI
+    public Animale trovaPiuAlto (List<Animale> listaAnimali){
+
+        Animale animalePiuAlto = listaAnimali.get(1);
+        Iterator<Animale> iter = listaAnimali.iterator();
+        while(iter.hasNext())
+        {
+            Animale curAnimale = iter.next();
+            curAnimale.getAltezza();
+
+            if (curAnimale.getAltezza()>animalePiuAlto.getAltezza()){
+                animalePiuAlto = curAnimale;
+            }
+        }
+        return animalePiuAlto;
+    }
+
+    public Animale trovaPiuBasso (List<Animale> listaAnimali){
+
+        Animale animalePiuBasso = listaAnimali.get(0);
+        Iterator<Animale> iter = listaAnimali.iterator();
+        while(iter.hasNext())
+        {
+            Animale curAnimale = iter.next();
+            curAnimale.getAltezza();
+
+            if (curAnimale.getAltezza()<animalePiuBasso.getAltezza()){
+                animalePiuBasso = curAnimale;
+            }
+        }
+        return animalePiuBasso;
     }
 
 }
