@@ -1,5 +1,10 @@
 package animale;
 
+import animale.caratteristiche.Alato;
+import animale.caratteristiche.Caudato;
+import animale.specie.Aquila;
+import animale.specie.Leone;
+
 import java.time.LocalDate;
 import java.util.Iterator;
 import java.util.List;
@@ -120,5 +125,63 @@ public abstract class Animale {
         }
         return animalePiuLeggero;
     }
+
+    public Animale trovaAperturaAlareMaggiore(List<Animale> listaAnimali){
+
+        Animale animaleAperturaAlareMaggiore = listaAnimali.get(0);
+
+        if(animaleAperturaAlareMaggiore instanceof Alato == false) {
+            int i = 1;
+            while (animaleAperturaAlareMaggiore instanceof Alato == false) {
+                animaleAperturaAlareMaggiore = listaAnimali.get(i);
+                i++;
+            }
+        }
+
+        Iterator<Animale> iter = listaAnimali.iterator();
+
+        while(iter.hasNext())
+        {
+            Animale curAnimale = iter.next();
+            if (curAnimale instanceof Alato)
+            {
+                ((Alato) curAnimale).getAperturaAlare();
+                if (((Alato) curAnimale).getAperturaAlare() > ((Alato) animaleAperturaAlareMaggiore).getAperturaAlare()){
+                    animaleAperturaAlareMaggiore = curAnimale;
+                }
+            }
+        }
+        return animaleAperturaAlareMaggiore;
+
+    }
+    public Animale trovaCodaPiuLunga(List<Animale> listaAnimali){
+
+        Animale animaleCodaPiuLunga = listaAnimali.get(0);
+
+        if(animaleCodaPiuLunga instanceof Caudato == false) {
+            int i = 1;
+            while (animaleCodaPiuLunga instanceof Caudato == false) {
+                animaleCodaPiuLunga = listaAnimali.get(i);
+                i++;
+            }
+        }
+
+        Iterator<Animale> iter = listaAnimali.iterator();
+
+        while(iter.hasNext())
+        {
+            Animale curAnimale = iter.next();
+            if (curAnimale instanceof Caudato)
+            {
+                ((Caudato) curAnimale).getLunghezzaCoda();
+                if (((Caudato) curAnimale).getLunghezzaCoda() > ((Caudato) animaleCodaPiuLunga).getLunghezzaCoda()){
+                    animaleCodaPiuLunga = curAnimale;
+                }
+            }
+        }
+        return animaleCodaPiuLunga;
+
+    }
+
 
 }

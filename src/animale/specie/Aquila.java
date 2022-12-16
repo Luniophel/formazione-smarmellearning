@@ -6,7 +6,7 @@ import animale.caratteristiche.Alato;
 import java.util.Iterator;
 import java.util.List;
 
-public class Aquila extends Animale {
+public class Aquila extends Animale implements Alato {
 
     private double aperturaAlare = 0;
 

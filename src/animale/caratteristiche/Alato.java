@@ -11,6 +11,4 @@ public interface Alato {
     public double getAperturaAlare();
     public void setAperturaAlare(double aperturaAlare);
 
-    public Animale trovaAperturaAlareMaggiore(List<Animale> listaAnimali);
-
 }

@@ -11,5 +11,4 @@ public interface Caudato {
     public double getLunghezzaCoda();
     public void setLunghezzaCoda(double LunghezzaCoda);
 
-    public Animale trovaCodaPiuLunga(List<Animale> listaAnimali);
 }
