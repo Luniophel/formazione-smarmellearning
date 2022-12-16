@@ -1,15 +1,17 @@
 package animale.specie;
 
 import animale.Animale;
+import animale.caratteristiche.Alato;
 
-public class Aquila extends Animale {
+public class Aquila extends Animale implements Alato {
 
-    private double aperturaAlare;
+    private double aperturaAlare = 0;
 
     public double getAperturaAlare() {
         return aperturaAlare;
-    }
+    };
     public void setAperturaAlare(double aperturaAlare) {
         this.aperturaAlare = aperturaAlare;
-    }
+    };
+
 }
