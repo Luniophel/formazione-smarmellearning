@@ -9,7 +9,16 @@ public abstract class Animal {
     private int age;
     private LocalDate importDate;
     private double weight;
-    private double heihgt;
+    private double height;
+
+    protected Animal (String name, String favouriteFood, int age, double weight, double height){
+        this.name = name;
+        this.favouriteFood = favouriteFood;
+        this.age = age;
+        this.weight = weight;
+        this.height = height;
+        importDate = LocalDate.now();
+    }
 
     //GETTER & SETTER
     public String getName() {
@@ -52,11 +61,11 @@ public abstract class Animal {
         this.weight = weight;
     }
 
-    public double getHeihgt() {
-        return heihgt;
+    public double getHeight() {
+        return height;
     }
 
-    public void setHeihgt(double heihgt) {
-        this.heihgt = heihgt;
+    public void setHeight(double height) {
+        this.height = height;
     }
 }
